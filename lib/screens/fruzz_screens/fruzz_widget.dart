@@ -110,15 +110,24 @@ class MainButton extends StatelessWidget {
       {Key? key,
         required this.text,
         required this.color,
-        required this.textColor})
+        required this.textColor,
+        required this.navigate,
+
+      })
       : super(key: key);
   final Color color;
   final Color textColor;
   final String text;
+  final Widget navigate;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => navigate),
+        );
+      },
 
       child: Text(
 

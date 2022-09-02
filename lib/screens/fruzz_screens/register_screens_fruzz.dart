@@ -1,4 +1,5 @@
 import 'package:egitim_deneme/screens/fruzz_screens/fruzz_widget.dart';
+import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 
 class FruzzRegister extends StatefulWidget {
@@ -30,6 +31,7 @@ class _FruzzRegisterState extends State<FruzzRegister> {
             InputText(text: "Password"),
             InputText(text: "Confirm Password"),
             MainButton(
+                navigate: FruzzWelcome(),
                 text: "Register", color: Colors.black, textColor: Colors.white),
             DividerText(text: "Or Register With"),
             Row(

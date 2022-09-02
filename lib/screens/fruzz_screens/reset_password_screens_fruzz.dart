@@ -1,3 +1,4 @@
+import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 import 'package:egitim_deneme/screens/fruzz_screens/fruzz_widget.dart';
 
@@ -38,6 +39,7 @@ class _FruzzResetPasswordState extends State<FruzzResetPassword> {
             InputText(text: "Confirm Password"),
             SizedBox(height: 20),
             MainButton(
+                navigate: FruzzRegister(),
                 text: "Reset Password",
                 color: Colors.black,
                 textColor: Colors.white),

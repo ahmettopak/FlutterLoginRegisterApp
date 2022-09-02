@@ -1,3 +1,4 @@
+import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 
 import 'fruzz_widget.dart';
@@ -42,6 +43,7 @@ class _FruzzPasswordChangeState extends State<FruzzPasswordChange> {
             ),
             SizedBox(height: 20,),
             MainButton(
+                navigate: FruzzRegister(),
                 text: "Back To login",
                 color: Colors.black,
                 textColor: Colors.white)
