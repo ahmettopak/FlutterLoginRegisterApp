@@ -1,7 +1,9 @@
 import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
+import 'package:egitim_deneme/screens/fruzz_screens/reset_password_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 
 import 'fruzz_widget.dart';
+import 'welcome_screens_fruzz.dart';
 
 class FruzzLogin extends StatefulWidget {
   const FruzzLogin({Key? key}) : super(key: key);
@@ -15,25 +17,15 @@ class _FruzzLoginState extends State<FruzzLogin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //IconButton(
-        //   onPressed: () {},
-        //   icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-        //   padding: EdgeInsets.only(top: 10),
-        // ),
-        // leading: ElevatedButton(
-        //   onPressed: () {},
-        //   child: Icon(Icons.arrow_back_ios, color: Colors.black),
-        //   style: ElevatedButton.styleFrom(
-        //     primary: Colors.transparent,
-        //     elevation: 0,
-        //     shape: RoundedRectangleBorder(
-        //       side: BorderSide(width: 1, color: Colors.black26),
-        //       borderRadius: BorderRadius.circular(20),
-        //     ),
-        //   ),
-        // ),
-        leading: BackButton(),
-
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FruzzWelcome()),
+            );
+          },
+          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -67,7 +59,12 @@ class _FruzzLoginState extends State<FruzzLogin> {
                 ),
                 Align(
                   child:
-                      LinkText(text: "Forgot Password?", color: Colors.black),
+                      TextButton(child: LinkText(text: "Forgot Password?", color: Colors.black),onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FruzzResetPassword()),
+                        );
+                      }),
                   alignment: Alignment.centerRight,
                 ),
               ],
@@ -76,12 +73,13 @@ class _FruzzLoginState extends State<FruzzLogin> {
               height: 20,
             ),
             MainButton(
-                navigate: FruzzRegister(),
-                text: "Login", color: Colors.black, textColor: Colors.white),
+              navigate: FruzzWelcome(),
+                text: "Login",
+                color: Colors.black,
+                textColor: Colors.white),
             DividerText(text: "Or Login with"),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
               children: [
                 Flexible(
                   flex: 1,
@@ -110,28 +108,50 @@ class _FruzzLoginState extends State<FruzzLogin> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 LinkText(text: "Don’t have an account?", color: Colors.black),
-                LinkText(text: " Register Now", color: Color(0xff35C2C1)),
+                TextButton(
+                  child: LinkText(
+                    text: " Register Now",
+                    color: Color(0xff35C2C1),
+                  ),
+                  style: TextButton.styleFrom(
+                      elevation: 0, backgroundColor: Colors.transparent),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FruzzRegister()),
+                    );
+                  },
+                ),
               ],
             ),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       NewWidget();
+            //     },
+            //     child: null)
           ],
         ),
       ),
     );
   }
-
-
 }
 
-class BackButton extends StatelessWidget {
-  const BackButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.arrow_back_ios, color: Colors.black));
-  }
-}
-
+// class ShowDialog extends StatelessWidget {
+//   const ShowDialog({
+//     Key? key,
+//   }) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return AlertDialog(
+//       title: const Text('AlertDialog Title'),
+//       content: const Text('AlertDialog description'),
+//       actions: <Widget>[
+//         TextButton(
+//           onPressed: () => Navigator.pop(context, 'OK'),
+//           child: const Text('OK'),
+//         ),
+//       ],
+//     );
+//   }
+// }

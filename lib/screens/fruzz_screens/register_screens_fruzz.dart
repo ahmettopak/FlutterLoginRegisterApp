@@ -1,4 +1,5 @@
 import 'package:egitim_deneme/screens/fruzz_screens/fruzz_widget.dart';
+import 'package:egitim_deneme/screens/fruzz_screens/login_screens_fruzz.dart';
 import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,12 @@ class _FruzzRegisterState extends State<FruzzRegister> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FruzzWelcome()),
+            );
+          },
           icon: Icon(Icons.arrow_back_ios, color: Colors.black),
         ),
       ),
@@ -32,7 +38,9 @@ class _FruzzRegisterState extends State<FruzzRegister> {
             InputText(text: "Confirm Password"),
             MainButton(
                 navigate: FruzzWelcome(),
-                text: "Register", color: Colors.black, textColor: Colors.white),
+                text: "Register",
+                color: Colors.black,
+                textColor: Colors.white),
             DividerText(text: "Or Register With"),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,8 +53,20 @@ class _FruzzRegisterState extends State<FruzzRegister> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                LinkText(text: "Already have an account? ", color: Colors.black),
-                LinkText(text: "Login Now", color: Color(0xff35C2C1)),
+                LinkText(
+                    text: "Already have an account? ", color: Colors.black),
+                TextButton(
+                  child: LinkText(
+                    text: "Login Now",
+                    color: Color(0xff35C2C1),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FruzzLogin()),
+                    );
+                  },
+                ),
               ],
             ),
           ],

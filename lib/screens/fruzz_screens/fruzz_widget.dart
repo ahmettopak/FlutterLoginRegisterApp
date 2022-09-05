@@ -1,3 +1,4 @@
+import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 
 class OtherButton extends StatelessWidget {
@@ -118,7 +119,7 @@ class MainButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final String text;
-  final Widget navigate;
+  final navigate;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

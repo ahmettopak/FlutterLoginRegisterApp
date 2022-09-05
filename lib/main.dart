@@ -1,12 +1,4 @@
-import 'package:egitim_deneme/screens/fruzz_screens/forgot_password_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/login_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/password_change_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/reset_password_screens_fruzz.dart';
 import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/home_screen.dart';
-import 'package:egitim_deneme/screens/login_screen.dart';
-import 'package:egitim_deneme/screens/statefulwidget_deneme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
