@@ -12,68 +12,66 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => WelcomePage()),
-            );
-          },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              pinned: true,
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomePage()),
+                  );
+                },
+                icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+              ),
+              floating: true,
+            ),
+          ];
+        },
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          scrollDirection: Axis.vertical,
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 50),
               child: buildTitle("Welcome back! Glad to see you, Again!"),
             ),
-            SizedBox(
-              height: 40,
+
+            Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  InputText(
+                    text: "E-mail",
+                  ),
+                  PasswordsText(
+                    text: "Password",
+                    right_icon: Icon(Icons.remove_red_eye_outlined),
+                  ),
+                  Align(
+                    child: TextButton(
+                        child: LinkText(
+                            text: "Forgot Password?", color: Colors.black),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ResetPasswordPage()),
+                          );
+                        }),
+                    alignment: Alignment.centerRight,
+                  ),
+                ],
+              ),
             ),
-            Column(
-              children: [
-                InputText(
-                  text: "E-mail",
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                InputText(
-                  text: "Password",
-                  right_icon: Icon(Icons.remove_red_eye_outlined),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Align(
-                  child: TextButton(
-                      child: LinkText(
-                          text: "Forgot Password?", color: Colors.black),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ResetPasswordPage()),
-                        );
-                      }),
-                  alignment: Alignment.centerRight,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
+
             MainButton(
                 navigate: WelcomePage(),
                 text: "Login",
@@ -103,9 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 50,
-            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -133,6 +129,7 @@ class _LoginPageState extends State<LoginPage> {
             //     child: null)
           ],
         ),
+        floatHeaderSlivers: true,
       ),
     );
   }

@@ -14,28 +14,37 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => WelcomePage()),
-            );
-          },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              pinned: true,
+              backgroundColor: Colors.white,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomePage()),
+                  );
+                },
+                icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+              ),
+              floating: true,
+            ),
+          ];
+        },
+        body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          scrollDirection: Axis.vertical,
           children: [
             buildTitle("Hello! Register to get started"),
             InputText(text: "Username"),
+            Spacer(
+              flex: 1,
+            ),
             InputText(text: "E-mail"),
-            InputText(text: "Password"),
-            InputText(text: "Confirm Password"),
+            PasswordsText(text: "Password"),
+            PasswordsText(text: "Confirm Password"),
             MainButton(
                 navigate: WelcomePage(),
                 text: "Register",
@@ -71,6 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ],
         ),
+        floatHeaderSlivers: true,
       ),
     );
   }

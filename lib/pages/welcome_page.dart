@@ -19,8 +19,7 @@ class _WelcomePageState extends State<WelcomePage> {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("images/fruzzBackground.png"),
-              fit: BoxFit.cover),
+              image: AssetImage("images/Background.png"), fit: BoxFit.cover),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
@@ -28,7 +27,6 @@ class _WelcomePageState extends State<WelcomePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Image.asset("images/Branding.png"),
               MainButton(
                   navigate: LoginPage(),
                   text: "Login",

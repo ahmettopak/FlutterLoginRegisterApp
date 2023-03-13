@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+final formkey = GlobalKey<FormState>();
+
 class OtherButton extends StatelessWidget {
   const OtherButton({Key? key, required this.image}) : super(key: key);
   final String image;
@@ -55,7 +57,7 @@ class DividerText extends StatelessWidget {
   }
 }
 
-class InputText extends StatelessWidget {
+class InputText extends StatefulWidget {
   const InputText({
     Key? key,
     required this.text,
@@ -65,19 +67,87 @@ class InputText extends StatelessWidget {
   final left_icon;
   final right_icon;
   final String text;
+
+  @override
+  State<InputText> createState() => _InputTextState();
+}
+
+class _InputTextState extends State<InputText> {
+  late String email;
+
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      style: TextStyle(backgroundColor: Color(0xF7F8F9)),
-      decoration: InputDecoration(
-        prefixIcon: left_icon,
-        suffixIcon: right_icon,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Bilgileri Eksiksiz Doldurunuz";
+          }
+        },
+        onSaved: (value) {
+          email = value!;
+        },
+        style: TextStyle(backgroundColor: Color(0xF7F8F9)),
+        decoration: InputDecoration(
+          prefixIcon: widget.left_icon,
+          suffixIcon: widget.right_icon,
 
-        labelText: text,
-        // filled: true,
-        // fillColor: Color(0xFF707070),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          labelText: widget.text,
+          // filled: true,
+          // fillColor: Color(0xFF707070),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class PasswordsText extends StatefulWidget {
+  const PasswordsText({
+    super.key,
+    required this.text,
+    this.left_icon,
+    this.right_icon,
+  });
+  final left_icon;
+  final right_icon;
+  final String text;
+
+  @override
+  State<PasswordsText> createState() => _PasswordsTextState();
+}
+
+class _PasswordsTextState extends State<PasswordsText> {
+  late String password;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Bilgileri Eksiksiz Doldurunuz";
+          } else {}
+        },
+        onSaved: (value) {
+          password = value!;
+        },
+        obscureText: true,
+        style: TextStyle(backgroundColor: Color(0xF7F8F9)),
+        decoration: InputDecoration(
+          prefixIcon: widget.left_icon,
+          suffixIcon: widget.right_icon,
+
+          labelText: widget.text,
+          // filled: true,
+          // fillColor: Color(0xFF707070),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       ),
     );
