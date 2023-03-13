@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "209503158758",
+    "project_id": "loginregisterapp-6c33a",
+    "storage_bucket": "loginregisterapp-6c33a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209503158758:android:93104887bb0eedcdca1627",
+        "android_client_info": {
+          "package_name": "com.example.egitim_deneme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209503158758-vm8h22672mi3lfiespvnfn2dptn9aufq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi6TVNTyALNDfzsJYbT-BuwNu0ZN-nXtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209503158758-vm8h22672mi3lfiespvnfn2dptn9aufq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
