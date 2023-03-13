@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:209503158758:android:472a964a07cb6835ca1627",
+        "android_client_info": {
+          "package_name": "com.ahmet.loginregister"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209503158758-vm8h22672mi3lfiespvnfn2dptn9aufq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi6TVNTyALNDfzsJYbT-BuwNu0ZN-nXtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209503158758-vm8h22672mi3lfiespvnfn2dptn9aufq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "209503158758-6pip94vi19oa8fs5mms32ksd4aq48abk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.egitimDeneme"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:209503158758:android:93104887bb0eedcdca1627",
         "android_client_info": {
           "package_name": "com.example.egitim_deneme"
@@ -29,6 +65,13 @@
             {
               "client_id": "209503158758-vm8h22672mi3lfiespvnfn2dptn9aufq.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "209503158758-6pip94vi19oa8fs5mms32ksd4aq48abk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.egitimDeneme"
+              }
             }
           ]
         }

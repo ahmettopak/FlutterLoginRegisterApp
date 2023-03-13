@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.egitim_deneme">
+    package="com.ahmet.loginregister">
    <application
         android:label="egitim_deneme"
         android:name="${applicationName}"

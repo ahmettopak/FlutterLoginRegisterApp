@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '209503158758',
     projectId: 'loginregisterapp-6c33a',
     storageBucket: 'loginregisterapp-6c33a.appspot.com',
-    iosClientId: '209503158758-6pip94vi19oa8fs5mms32ksd4aq48abk.apps.googleusercontent.com',
-    iosBundleId: 'com.example.egitimDeneme',
+    iosClientId:
+        '209503158758-6pip94vi19oa8fs5mms32ksd4aq48abk.apps.googleusercontent.com',
+    iosBundleId: 'com.ahmet.loginregister',
   );
 }

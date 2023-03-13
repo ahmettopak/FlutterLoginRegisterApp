@@ -1,4 +1,4 @@
-package com.example.egitim_deneme
+package com.ahmet.loginregister
 
 import io.flutter.embedding.android.FlutterActivity
 
