@@ -1,7 +1,5 @@
-# Flutter Login Register App
+# Flutter Firebase Login Register App
 
-A new Flutter Login Register App
+![](ui\Welcome.png) ![](ui\Login.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
