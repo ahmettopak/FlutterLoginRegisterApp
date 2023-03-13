@@ -1,4 +1,3 @@
-import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
 import 'package:flutter/material.dart';
 
 class OtherButton extends StatelessWidget {
@@ -107,15 +106,13 @@ class LinkText extends StatelessWidget {
 }
 
 class MainButton extends StatelessWidget {
-  const MainButton(
-      {Key? key,
-        required this.text,
-        required this.color,
-        required this.textColor,
-        required this.navigate,
-
-      })
-      : super(key: key);
+  const MainButton({
+    Key? key,
+    required this.text,
+    required this.color,
+    required this.textColor,
+    required this.navigate,
+  }) : super(key: key);
   final Color color;
   final Color textColor;
   final String text;
@@ -129,20 +126,19 @@ class MainButton extends StatelessWidget {
           MaterialPageRoute(builder: (context) => navigate),
         );
       },
-
       child: Text(
-
         text,
-        style: TextStyle(color: textColor,fontSize: 15, fontWeight: FontWeight.bold),
+        style: TextStyle(
+            color: textColor, fontSize: 15, fontWeight: FontWeight.bold),
       ),
       style: ElevatedButton.styleFrom(
-          primary: color,
-          padding: EdgeInsets.all(20),
-          shape: RoundedRectangleBorder(
-            side: BorderSide(color: Colors.black, width: 1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          // fixedSize: Size(10, 50)
+        primary: color,
+        padding: EdgeInsets.all(20),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: Colors.black, width: 1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        // fixedSize: Size(10, 50)
       ),
     );
   }
@@ -162,8 +158,8 @@ class MainButton extends StatelessWidget {
 // }
 
 Text buildTitle(String text) => Text(
-  text,
-  textAlign: TextAlign.start,
-  softWrap: true,
-  style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-);
+      text,
+      textAlign: TextAlign.start,
+      softWrap: true,
+      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    );

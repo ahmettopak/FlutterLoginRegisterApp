@@ -1,18 +1,17 @@
-import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/reset_password_screens_fruzz.dart';
 import 'package:flutter/material.dart';
+import 'package:loginregister/pages/auth/register_page.dart';
+import 'package:loginregister/pages/auth/reset_password_page.dart';
+import 'package:loginregister/pages/welcome_page.dart';
+import 'package:loginregister/pages/widget.dart';
 
-import 'fruzz_widget.dart';
-import 'welcome_screens_fruzz.dart';
-
-class FruzzLogin extends StatefulWidget {
-  const FruzzLogin({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<FruzzLogin> createState() => _FruzzLoginState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _FruzzLoginState extends State<FruzzLogin> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class _FruzzLoginState extends State<FruzzLogin> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => FruzzWelcome()),
+              MaterialPageRoute(builder: (context) => WelcomePage()),
             );
           },
           icon: Icon(Icons.arrow_back_ios, color: Colors.black),
@@ -58,11 +57,14 @@ class _FruzzLoginState extends State<FruzzLogin> {
                   height: 15,
                 ),
                 Align(
-                  child:
-                      TextButton(child: LinkText(text: "Forgot Password?", color: Colors.black),onPressed: (){
+                  child: TextButton(
+                      child: LinkText(
+                          text: "Forgot Password?", color: Colors.black),
+                      onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FruzzResetPassword()),
+                          MaterialPageRoute(
+                              builder: (context) => ResetPasswordPage()),
                         );
                       }),
                   alignment: Alignment.centerRight,
@@ -73,7 +75,7 @@ class _FruzzLoginState extends State<FruzzLogin> {
               height: 20,
             ),
             MainButton(
-              navigate: FruzzWelcome(),
+                navigate: WelcomePage(),
                 text: "Login",
                 color: Colors.black,
                 textColor: Colors.white),
@@ -118,7 +120,7 @@ class _FruzzLoginState extends State<FruzzLogin> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FruzzRegister()),
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
                     );
                   },
                 ),

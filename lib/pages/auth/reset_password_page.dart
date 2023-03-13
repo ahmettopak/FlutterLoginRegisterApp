@@ -1,17 +1,15 @@
-import 'package:egitim_deneme/screens/fruzz_screens/password_changed_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
 import 'package:flutter/material.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/fruzz_widget.dart';
+import 'package:loginregister/pages/auth/password_change_page.dart';
+import 'package:loginregister/pages/widget.dart';
 
-class FruzzResetPassword extends StatefulWidget {
-  const FruzzResetPassword({Key? key}) : super(key: key);
+class ResetPasswordPage extends StatefulWidget {
+  const ResetPasswordPage({Key? key}) : super(key: key);
 
   @override
-  State<FruzzResetPassword> createState() => _FruzzResetPasswordState();
+  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
 }
 
-class _FruzzResetPasswordState extends State<FruzzResetPassword> {
+class _ResetPasswordPageState extends State<ResetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +39,7 @@ class _FruzzResetPasswordState extends State<FruzzResetPassword> {
             InputText(text: "Confirm Password"),
             SizedBox(height: 20),
             MainButton(
-                navigate: FruzzPasswordChange(),
+                navigate: PasswordChangePage(),
                 text: "Reset Password",
                 color: Colors.black,
                 textColor: Colors.white),
@@ -51,7 +49,3 @@ class _FruzzResetPasswordState extends State<FruzzResetPassword> {
     );
   }
 }
-
-
-
-

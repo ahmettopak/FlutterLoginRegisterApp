@@ -1,17 +1,17 @@
-import 'package:egitim_deneme/screens/fruzz_screens/login_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/register_screens_fruzz.dart';
 import 'package:flutter/material.dart';
+import 'package:loginregister/pages/auth/login_page.dart';
+import 'package:loginregister/pages/auth/register_page.dart';
 
-import 'fruzz_widget.dart';
+import 'widget.dart';
 
-class FruzzWelcome extends StatefulWidget {
-  const FruzzWelcome({Key? key}) : super(key: key);
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
-  State<FruzzWelcome> createState() => _FruzzWelcomeState();
+  State<WelcomePage> createState() => _WelcomePageState();
 }
 
-class _FruzzWelcomeState extends State<FruzzWelcome> {
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +30,13 @@ class _FruzzWelcomeState extends State<FruzzWelcome> {
             children: [
               Image.asset("images/Branding.png"),
               MainButton(
-                navigate: FruzzLogin(),
-                  text: "Login", color: Colors.black, textColor: Colors.white),
+                  navigate: LoginPage(),
+                  text: "Login",
+                  color: Colors.black,
+                  textColor: Colors.white),
               SizedBox(height: 30),
               MainButton(
-                navigate: FruzzRegister(),
+                navigate: RegisterPage(),
                 text: "Register",
                 color: Colors.white,
                 textColor: Colors.black,

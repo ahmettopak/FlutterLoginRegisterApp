@@ -1,16 +1,16 @@
-import 'package:egitim_deneme/screens/fruzz_screens/fruzz_widget.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/login_screens_fruzz.dart';
-import 'package:egitim_deneme/screens/fruzz_screens/welcome_screens_fruzz.dart';
 import 'package:flutter/material.dart';
+import 'package:loginregister/pages/auth/login_page.dart';
+import 'package:loginregister/pages/welcome_page.dart';
+import 'package:loginregister/pages/widget.dart';
 
-class FruzzRegister extends StatefulWidget {
-  const FruzzRegister({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<FruzzRegister> createState() => _FruzzRegisterState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _FruzzRegisterState extends State<FruzzRegister> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _FruzzRegisterState extends State<FruzzRegister> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => FruzzWelcome()),
+              MaterialPageRoute(builder: (context) => WelcomePage()),
             );
           },
           icon: Icon(Icons.arrow_back_ios, color: Colors.black),
@@ -37,7 +37,7 @@ class _FruzzRegisterState extends State<FruzzRegister> {
             InputText(text: "Password"),
             InputText(text: "Confirm Password"),
             MainButton(
-                navigate: FruzzWelcome(),
+                navigate: WelcomePage(),
                 text: "Register",
                 color: Colors.black,
                 textColor: Colors.white),
@@ -63,7 +63,7 @@ class _FruzzRegisterState extends State<FruzzRegister> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FruzzLogin()),
+                      MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
                 ),
